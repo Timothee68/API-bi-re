@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css" integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
+    <title>Beer</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Bière</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse col-8" id="navbarColor03">
+                    <ul class="navbar-nav me-auto ">
+                        <li class="nav-item dropdown  ">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Famille de Bière </a>
+                            <div class="dropdown-menu">
+                                <!-- Liste dropdown par type de bière. On utilise la fonction rechercherBlonde de JS avec onclick -->
+                                <a class="dropdown-item bg-info " href="#" onclick="rechercherBlonde()" >Blonde</a>
+                                <a class="dropdown-item bg-info" href="#"  onclick="rechercherBrune()">Brune</a>
+                                <a class="dropdown-item bg-info" href="#" onclick="rechercherRousse()">Rousse</a>
+                                <a class="dropdown-item bg-info" href="#" onclick="rechercherNoire()">Noire</a>
+                                <a class="dropdown-item bg-info" href="#" onclick="rechercherAmbree()">Ambrée</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Taux d'alcool</a>
+                            <div class="dropdown-menu">
+<!-- Liste dropdown : on utilise les fonctions pemettant de selectionner les fourchettes de degrés d'alcool désirées de JS avec onclick -->
+                                <a id="selection5" class="dropdown-item  bg-info" href="#" onclick="rechercheEntre0Et5()"> Inférieur a 5 Degrés</a>
+                                <a class="dropdown-item bg-info" href="#" onclick="rechercheEntre5Et10()()"> Compris entre 5 et 10 Degrés</a>
+                                <a class="dropdown-item bg-info" href="#" onclick="rechercheEntre10Et20()()">Compris entre 10 et 20 Degrés</a>
+                                <a class="dropdown-item bg-info" href="#" onclick="rechercheEntre20Et99()()">Supérieur a 20 Degrés</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- La recherche box -->
+                    <form class="d-flex col-md-6">
+                        <input id="search-box" class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button id="search-button" class="btn btn-secondary my-2 my-sm-0" type="button">Search</button>
+                    </form>
+                </div>
+            </div>    
+        </nav>
+    </header>
+
+    <main>
+        <div class="row mt-3 mb-3">
+            <div class="d-flex justify-content-center col-12">
+                <nav aria-label="Page navigation example">
+                    <ul id="pagination" class="pagination">
+                        <!-- La pagination pour afficher l'ensemble de la liste de bière sur 9 page. -->
+                      <li class="page-item"><a class="page-link  bg-info" href="#" >Page :</a></li>
+                      <li class="page-item"><a class="page-link  bg-info" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">5</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">6</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">7</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">8</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">9</a></li>
+                      <li class="page-item"><a class="page-link bg-info" href="#">It's the last page of beer sorry...</a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+      <div class="container-fluid d-flex justify-content-around ">
+        <!-- Card  -->
+        <div id="list-de-card" class="col-12 card-group row row-cols-3"></div>
+      </div> 
+    </main>
+    <footer class="fixed-bottom bg-primary mt-md-5">
+        <!-- fixed-bottom -->
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <nav >
+                      <a class="m-md-2" href="#">CGU</a>
+                      <a class="m-md-2" href="#">Plan du site</a>
+                      <a class="m-md-2" href="#">Mention légal</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12 mt-2" >
+                    <small>@copyright-TL-MH-BL</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
